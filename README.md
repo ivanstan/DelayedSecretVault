@@ -39,17 +39,16 @@ Release/prod builds use a **60 minute** access-delay floor.
 
 ### Deploy zip
 
-Publish a Release package and pack required artifacts:
+Publishes a **framework-dependent single-file** Release EXE (requires [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) on the target PC):
 
 ```powershell
-.\scripts\Deploy.ps1
+.\scripts\Deploy.ps1 -Version 1.0.0 -Runtime win-x64
 ```
 
-Creates `artifacts/publish/` and a timestamped zip under `artifacts/`. Self-contained `win-x64` by default. For framework-dependent:
+Creates:
 
-```powershell
-.\scripts\Deploy.ps1 -FrameworkDependent
-```
+- `artifacts/publish/DelayedSecretVault-win-x64.exe`
+- `artifacts/DelayedSecretVault-1.0.0-win-x64.zip`
 
 ## Storage
 
